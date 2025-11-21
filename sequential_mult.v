@@ -58,14 +58,14 @@ module sequential_mult(
         if(operand_b[0]==0 && shift_count<4) begin
             multiplicand<=multiplicand<<1;
             partial_product<=partial_product;
-            shift_count=shift_count+1;
+            shift_count<=shift_count+1;
             operand_b<=operand_b>>1;
             NS<=s1_multiply;
             end
         else if(operand_b[0]==1&&shift_count<4) begin
             multiplicand<=multiplicand<<1;
             partial_product<=partial_product+multiplicand;
-            shift_count=shift_count+1;
+            shift_count<=shift_count+1;
             operand_b<=operand_b>>1;
             NS<=s1_multiply;
             end
